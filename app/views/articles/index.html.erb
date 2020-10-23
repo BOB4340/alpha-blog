@@ -9,8 +9,17 @@
     <% @article.each do |col| %>
     <tr >
       <td align="center"><%= col.id %></td><td><%= col.title %></td><td><%= col.description %></td>
-      <td>Placeholder</td>
+      <td>
+       <%= link_to 'Show', article_path(col) %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_article_path(col) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', article_path(col.id), method: :delete %>
+      </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'New Article', new_article_path %>
