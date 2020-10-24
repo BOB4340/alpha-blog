@@ -1,22 +1,24 @@
 <h1>Creating a new article</h1>
-<h3>The following errors prevent the record from being saved</h3>
-  <ul>
-    <% if @article.errors.any? %>
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    <% end %>
-  </ul>
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
-  <p>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
+<!--<h3>The following errors prevent the record from being saved</h3>-->
+<!--  <ul>-->
+    <%# if @article.errors.any? %>
+      <%# @article.errors.full_messages.each do |msg| %>
+<!--        <li><%#= msg %></li>-->
+      <%# end %>
+    <%# end %>
+<!--  </ul>-->
+<%#= form_with scope: :article, url: articles_path, local: true do |f| %>
+<!--  <p>-->
+<!--    <%#= f.label :title %> <br>-->
+    <%#= f.text_field :title %>
+<!--  </p>-->
+<!--  <p>-->
+<!--    <%#= f.label :description %> <br>-->
+    <%#= f.text_area :description %>
+<!--  </p>-->
+<!--  <p>-->
+    <%#= f.submit %>
+<!--  </p>-->
+<%# end %>
+<%= link_to 'Go Back to All Articles', articles_path %>
